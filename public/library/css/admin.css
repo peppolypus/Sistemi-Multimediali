@@ -1,0 +1,378 @@
+/* Layout
+----------------------------------------------*/
+body
+{
+    background: url('../images/admin-body.png') repeat-x #fff;
+    font-family: 'SansationRegular', Arial, sans-serif;
+}
+#wrapper
+{
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+}
+
+#header
+{
+    width: 100%;
+    position: relative;
+    height: 80px;
+}
+
+#header #logo
+{
+    float: left;
+    width: 192px;
+    margin-top:5px;
+    height: 60px;
+}
+
+#main-body
+{
+    padding-top: 10px;
+}
+
+/* Main Navigation
+----------------------------------------------*/
+#navigation
+{
+    width: 100%;
+    position: relative;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+#navigation #topnav
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    float: left;
+    width: 920px;
+}
+
+#topnav li
+{
+    float: left;
+    margin: 0;
+    padding: 0 15px 0 0;
+    position: relative;
+}
+
+#topnav li a
+{
+    color: #fff;
+    text-decoration: none;
+    font-size: 150%;
+    display: block;
+    padding: 5px 5px 0 5px;
+    float: left;
+}
+
+#topnav li span
+{
+    width: 17px;
+    height: 30px;
+    float: left;
+    background: url(../images/subnav_btn.gif) no-repeat center top;
+}
+
+#topnav li span.subhover
+{
+    background-position: center bottom; cursor: pointer;
+}
+
+#topnav li ul.subnav
+{
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 30px;
+    background: #333;
+    margin: 0;
+    padding: 0;
+    display: none;
+    float: left;
+    width: 320px;
+    border: 1px solid #111;
+    z-index: 100;
+}
+
+#topnav li ul.subnav li
+{
+    margin: 0;
+    padding: 10px;
+    border-top: 1px solid #252525;
+    border-bottom: 1px solid #444;
+    clear: both;
+    width: 300px;
+    background: #333;
+}
+
+#topnav li ul.subnav li a
+{
+    float: left;
+    width: 300px;
+}
+
+/* Errors
+----------------------------------------------*/
+div#error-messages
+{
+    border: 1px solid #ccc;
+    width: 100%;
+    display: block;
+    background: url(../images/error.png) #fff 5px center no-repeat;
+    min-height: 50px;
+    margin: 10px 0;
+}
+
+div#error-messages ul
+{
+    margin: 0 0 5px 50px;
+    padding: 0;
+    list-style: none;
+}
+
+div#error-messages ul li
+{
+    font-weight: bold;
+    margin: 5px 0 0 0;
+}
+
+/* Fancy Styles
+----------------------------------------------*/
+.rounded
+{
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+.rounded-5
+{
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.shadow
+{
+	box-shadow: 0px 0px 10px #aaa;
+	-moz-box-shadow: 0px 0px 10px #aaa;
+	-webkit-box-shadow: 0px 0px 10px #aaa;
+}
+
+.clear
+{
+    clear: both;
+    overflow: hidden;
+}
+/* Form
+----------------------------------------------*/
+dt{padding: 0 0 5px 0;}
+dd{padding: 0 0 10px 10px;}
+dt label{font-weight: bold; font-size: 12px;}
+dt label.required:before{content: "* "; color: red;}
+.admin-toolbar a
+{
+    display: block;
+    width: 48px;
+    height: 48px;
+    float: right;
+    margin-right: 10px;
+}
+.admin-toolbar a span
+{
+    display: block;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #ccc;
+}
+.admin-toolbar a .savebutton
+{
+    background: url(../images/toolbar/save.png) no-repeat;
+}
+.admin-toolbar a .savenewbutton
+{
+    background: url(../images/toolbar/savenew.png) no-repeat;
+}
+.admin-toolbar a .deletebutton
+{
+    background: url(../images/toolbar/delete.png) no-repeat;
+}
+.admin-toolbar a .addbutton
+{
+    background: url(../images/toolbar/add.png) no-repeat;
+}
+.admin-toolbar
+{
+    width: 100%;
+    border: 1px solid #ccc;
+    position: relative;
+    margin-bottom: 10px;
+    height: 60px;
+}
+
+.admin-toolbar-title
+{
+    float: left;
+    width: 50%;
+    padding-top: 13px;
+}
+
+.admin-toolbar-title h2
+{
+    padding: 5px;
+}
+
+.admin-toolbar-buttons
+{
+    float: right;
+    width: 45%;
+    padding-top: 5px;
+}
+
+#estate-info-wrapper
+{
+    width: 100%;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+.form-frame
+{
+    width: 47.5%;
+    padding: 10px;
+    /*border: 2px solid #ccc;*/
+    margin-bottom: 10px;   
+}
+
+.form-frame table
+{
+    border-right: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
+}
+.form-frame table tr td,
+.form-frame table tr th
+{
+    border-left: 1px solid #d3d3d3;
+    border-top: 1px solid #d3d3d3;
+    background: none;
+}
+.form-frame table tr td.labels
+{
+    text-align: right;
+    vertical-align: middle;
+    background: #f0f0f0;
+}
+#estate-generic-info,
+#estate-prices,
+#estate-advantages
+{
+    float: left;
+}
+
+#estate-details
+{
+    float: right;
+}
+#estate-details label[for|="caratteristiche"]
+{
+    float: left;
+    margin-right: 15px;
+}
+
+.form-frame table tr th
+{
+    vertical-align: middle;
+    background: #f0f0f0;
+    color: #fff;
+    margin: 0 0 10px 0;
+}
+.form-frame table tr th h3
+{
+    margin: 0;
+    padding: 2px 0;
+}
+input.error
+{
+    border: 1px solid red;
+}
+p.description
+{
+    color: #666;
+    font-style: italic;
+}
+
+.uploadifyQueueItem
+{
+    background: #f5f5f5;
+    border: 2px solid #e5e5e5;
+    font: 11px;
+    margin-top: 5px;
+    padding: 10px;
+    width: 350px;
+}
+
+.uploadifyQueueItem .fileName
+{
+    font: 11px;
+    line-height: 20px;
+}
+
+.uploadifyQueueItem .cancel
+{
+    float: right;
+}
+
+.uploadifyProgress
+{
+    background: #fff;
+    border-color: #808080 #c5c5c5 #c5c5c5 #808080;
+    border-style: solid;
+    border-width: 1px;
+    width: 100%;
+}
+
+.uploadifyProgressBar
+{
+    background: #09f;
+    height: 3px;
+    width: 1px;
+}
+#upload-gallery
+{
+    width: 100%;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    position: relative;
+}
+#upload-container-title
+{
+    margin: 10px;
+}
+#upload-container-title h2
+{
+    font-size: 2.5em;
+    margin:0;
+}
+#upload-containerUploader
+{
+    margin: 10px;
+}
+#upload-queue
+{
+    width: 380px;
+}
+#preview-images
+{
+    width: 100%;
+    margin-top: 10px;
+    position: relative;
+}
+.delete-image-container
+{
+    background: url(../images/delete-image.png) no-repeat;
+}

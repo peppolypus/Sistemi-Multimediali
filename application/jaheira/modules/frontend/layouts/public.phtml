@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <?php echo $this->headTitle() ?>
+        <?php echo $this->headStyle() ?>
+        <?php echo $this->headLink() ?>
+        <?php echo $this->headScript() ?>
+    </head>
+    <body>
+        <div id="container">
+            <?php foreach($this->messages['error'] as $message) : ?>
+            <div style="color: red;"><?php echo $message ?></div>
+            <?php endforeach; ?>
+            <?php foreach($this->messages['success'] as $message) : ?>
+            <div style="color: green;"><?php echo $message ?></div>
+            <?php endforeach; ?>
+            <?php echo $this->layout()->content ?>
+        </div>
+    </body>
+</html>

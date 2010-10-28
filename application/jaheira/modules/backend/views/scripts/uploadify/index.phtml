@@ -1,0 +1,59 @@
+<script type="text/javascript" src="/uploadify/swfobject.js"></script>
+<script type="text/javascript" src="/uploadify/jquery.uploadify.v2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#upload-container').uploadify({
+        'uploader'  : '<?php echo $this->baseUrl('/uploadify/uploadify.swf'); ?>',
+        'script'    : '<?php echo $this->url(array('controller' => 'uploadify', 'action' => 'upload', 'module' => 'backend')) ?>',
+        'folder'    : '<?php echo $this->baseUrl('/uploads'); ?>',
+        'cancelImg' : '/library/images/cancel.png',
+        'buttonImg' : '/library/images/search.png',
+        'width'     : '68',
+        'height'    : '68',
+        'buttonText': '',
+        'queueID'   : 'upload-queue',
+        'auto'      : false,
+        'multi'     : true,
+        'fileExt'   : '*.jpg;*.png;*.bmp;*.gif',
+        'fileDesc'  : 'Immagine',
+        'sizeLimit' : 524288000,
+        onError: function (a, b, c, d) {
+         if (d.info == 404)
+            alert('Could not find upload script. Use a path relative to: '+'<?php echo getcwd() ?>');
+         else
+            alert('error '+d.type+": "+d.info + " - " + c.name);
+        },
+        onComplete: function(event, queueID, fileObj, response, data)
+        {
+            // Imposto l'etichetta completato
+            $('#upload-container' + queueID + ' .percentage').text(' - Completato');
+            // Prendo l'url dell'immagine appena caricata
+            var src = '/images/galleries/' + response;
+            // La aggiungo alla lista delle immagini per questa galleria
+            if($('input#galleria').val() == "")
+            {
+                $('input#galleria').val(src);
+            }
+            else
+            {
+                $('input#galleria').val($('input#galleria').val() + ',' + src);
+            }
+            var image = $('<img src="' + src + '" alt="Image" width="300" height="auto" />');
+            image.hide();
+            image.appendTo("#preview-images");
+            image.fadeIn();
+            $('<br />').appendTo("#preview-images");
+            return false;
+        }
+    });
+});
+</script>
+<!-- Placeholder per il tasto di upload -->
+<div id="upload-container"></div>
+<div id="upload-queue" class="shadow"></div>
+<a href="javascript:$('#upload-container').uploadifyUpload();">Carica file</a>
+|
+<a href="javascript:$('#upload-container').uploadifyClearQueue();">Cancella Coda</a>
+<div id="preview-images" class="shadow">
+
+</div>

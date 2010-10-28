@@ -1,0 +1,26 @@
+<h2>Please Login</h2>
+
+<?php if($this->form->isErrors()) : ?>
+
+<?php foreach($this->form->getErrors() as $errors) : ?>
+<?php foreach($errors as $error) : ?>
+<div style="color: red;"><?php echo $error ?></div>
+<?php endforeach; ?>
+<?php endforeach; ?>
+
+<?php foreach($this->form->getErrorMessages() as $errors) : ?>
+<div style="color: red;"><?php echo $error ?></div>
+<?php endforeach; ?>
+
+<?php endif; ?>
+
+<form id="login" action="<?php echo $this->escape($this->form->getAction()) ?>" method="<?php echo $this->escape($this->form->getMethod()) ?>">
+    Email: <?php echo $this->form->email ?><br /><br />
+    Password: <?php echo $this->form->password ?><br /><br />
+    <?php echo $this->form->captcha ?>
+    <input type="submit" value="Login" /> or <a href="<?php echo $this->url(array('controller' => 'users', 'action' => 'signup'), null, true) ?>">Sign up</a>
+    <?php echo $this->form->___h ?>
+    <br />
+    <br />
+
+</form>

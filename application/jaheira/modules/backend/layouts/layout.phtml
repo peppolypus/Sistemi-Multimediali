@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <?php echo $this->headTitle() ?>
+        <?php echo $this->headStyle() ?>
+        <?php echo $this->headLink() ?>
+        <?php $this->headScript()->appendFile('/library/js/jquery.min.js'); ?>
+        <?php echo $this->headScript() ?>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div id="logo">
+                    <img src="/library/images/pinjoo.png" alt="Pinjoo" />
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div id="navigation">
+                <ul id="topnav">
+                    <li><a href="#">Dashboard</a></li>
+                    <li>
+                        <a href="/backend/website">Website</a>
+                        <ul class="subnav">
+                            <li><a href="/backend/website/add">Aggiungi una Pagina</a></li>
+                            <li><a href="/backend/website/list">Elenco Pagine</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/backend/estate">Estate Agency</a>
+                        <ul class="subnav">
+                            <li><a href="/bakend/estate/sell">Elenco Vendite</a></li>
+                            <li><a href="/backend/website/addsell">Aggiungi una Vendia</a></li>
+                            <li><a href="/bakend/estate/rent">Elenco Affitti</a></li>
+                            <li><a href="/backend/website/addrent">Aggiungi un Affitto</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+            </div>
+            <div id="main-body">
+                <?php echo $this->layout()->content ?>
+            </div>
+            
+        </div>
+    </body>
+</html>
