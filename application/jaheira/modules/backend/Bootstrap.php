@@ -5,11 +5,11 @@ class Backend_Bootstrap extends Zend_Application_Module_Bootstrap
     {
         return $this->getResourceLoader()->addResourceType('library', 'library', 'library');
     }
-    /*
+    
     protected function _initAuthPlugin()
     {
         Zend_Controller_Front::getInstance()->registerPlugin(
-                new Custom_Controller_Plugin_Auth(Zend_Auth::getInstance())
+                new Backend_Library_Controller_Plugin_Auth(Zend_Auth::getInstance())
         );
-    }*/
+    }
 }

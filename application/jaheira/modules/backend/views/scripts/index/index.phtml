@@ -1,9 +1,2 @@
 <?php echo $this->message ?>
-<br>
-<?php
-$rc = exec("system 'STRQSH CMD(mysql)' ");
-if (!$rc) {
-print 'error occured at shell_exec !';
-}
-print $rc ;
-?>
+<?php echo $this->id ?>
